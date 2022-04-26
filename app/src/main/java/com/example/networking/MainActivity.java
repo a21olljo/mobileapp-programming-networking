@@ -5,6 +5,8 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 @SuppressWarnings("FieldCanBeLocal")
 public class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
 
@@ -22,5 +24,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     public void onPostExecute(String json) {
         Log.d("MainActivity", json);
     }
+
+
 
 }
