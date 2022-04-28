@@ -1,3 +1,5 @@
+package com.example.networking;
+
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -7,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class MountainAdapter extends RecyclerView.Adapter<MountainAdapter.ViewHolder> {
+    private ArrayList<Mountain> mountains;
 
     @NonNull
     @Override
@@ -24,6 +27,13 @@ public class MountainAdapter extends RecyclerView.Adapter<MountainAdapter.ViewHo
         return 0;
     }
 
+    public ArrayList<Mountain> getMountains() {
+        return mountains;
+    }
+
+    public void setMountains(ArrayList<Mountain> mountains) {
+        this.mountains = mountains;
+    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ViewHolder(@NonNull View itemView) {

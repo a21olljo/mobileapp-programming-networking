@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
 
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=brom";
+    private ArrayList<Mountain> mountains = new ArrayList<Mountain>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
