@@ -32,4 +32,7 @@ public class Mountain {
         return cost;
     }
 
+    public Auxdata getAuxdata() {
+        return auxdata;
+    }
 }

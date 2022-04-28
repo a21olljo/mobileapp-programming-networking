@@ -1,5 +1,13 @@
 package com.example.networking;
 
 public class Auxdata {
-    String wiki, img;
+    private String wiki, img;
+
+    public String getWiki() {
+        return wiki;
+    }
+
+    public String getImg() {
+        return img;
+    }
 }
