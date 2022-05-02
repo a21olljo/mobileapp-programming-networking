@@ -4,8 +4,13 @@ import android.os.Bundle;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.*;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 @SuppressWarnings("FieldCanBeLocal")
@@ -22,11 +27,24 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.recycler_view);
-        new JsonFile(this, this).execute(JSON_URL);
+        mountainAdapter = new MountainAdapter(mountains);
+        recyclerView.setAdapter(mountainAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        new JsonTask(this).execute(JSON_URL);
+
     }
 
     @Override
     public void onPostExecute(String json) {
+        // Create GSON object to perform marshall/unmarshall operations
+        Gson gson = new Gson();
+
+        // Unmarshall JSON -> list of objects
+        Type type = new TypeToken<ArrayList<Mountain>>() {}.getType();
+        mountains = gson.fromJson(json, type);
+        mountainAdapter.setMountains(mountains);
+        mountainAdapter.notifyDataSetChanged();
+
         Log.d("MainActivity", json);
     }
 }

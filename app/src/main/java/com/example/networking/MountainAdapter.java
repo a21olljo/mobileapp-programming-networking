@@ -13,6 +13,9 @@ import java.util.ArrayList;
 public class MountainAdapter extends RecyclerView.Adapter<MountainAdapter.ViewHolder> {
     private ArrayList<Mountain> mountains;
 
+    public MountainAdapter(ArrayList<Mountain> mountains) {
+    }
+
     @NonNull
     @Override
     public MountainAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
