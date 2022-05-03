@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
         recyclerView = findViewById(R.id.recycler_view);
         mountainAdapter = new MountainAdapter(mountains);
-        recyclerView.setAdapter(mountainAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerView.setAdapter(mountainAdapter);
         new JsonTask(this).execute(JSON_URL);
 
     }

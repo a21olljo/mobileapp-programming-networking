@@ -8,8 +8,13 @@ public class Mountain {
     private Auxdata auxdata;
 
     // Constructor
-    public Mountain() {
-
+    public Mountain(String id, String name, String location, int size, int cost, Auxdata auxdata) {
+        this.id = id;
+        this.name = name;
+        this.location = location;
+        this.size = size;
+        this.cost = cost;
+        this.auxdata = auxdata;
     }
 
     public String getId() {
@@ -24,12 +29,12 @@ public class Mountain {
         return location;
     }
 
-    public int getSize() {
-        return size;
+    public String getSize() {
+        return Integer.toString(size);
     }
 
-    public int getCost() {
-        return cost;
+    public String getCost() {
+        return Integer.toString(cost);
     }
 
     public Auxdata getAuxdata() {
