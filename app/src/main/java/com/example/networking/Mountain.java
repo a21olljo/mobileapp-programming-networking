@@ -3,13 +3,13 @@ package com.example.networking;
 public class Mountain {
 
     // Attributes
-    private String id, name, location;
+    private String ID, name, location;
     private int size, cost;
     private Auxdata auxdata;
 
     // Constructor
     public Mountain(String id, String name, String location, int size, int cost, Auxdata auxdata) {
-        this.id = id;
+        this.ID = id;
         this.name = name;
         this.location = location;
         this.size = size;
@@ -18,7 +18,7 @@ public class Mountain {
     }
 
     public String getId() {
-        return id;
+        return ID;
     }
 
     public String getName() {
