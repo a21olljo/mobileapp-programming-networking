@@ -36,13 +36,12 @@ public class MountainAdapter extends RecyclerView.Adapter<MountainAdapter.ViewHo
         holder.size.setText(mountains.get(position).getSize());
         holder.cost.setText(mountains.get(position).getCost());
         holder.wiki.setText(mountains.get(position).getAuxdata().getWiki());
-        Picasso.get().load(mountains.get(position).getAuxdata().getImg()).into(holder.img);
+        // If an issue occurs when loading image display error, else do nothing
         Picasso.get()
             .load(mountains.get(position).getAuxdata().getImg())
             .into(holder.img, new Callback() {
                 @Override
-                public void onSuccess() {
-                }
+                public void onSuccess() {}
 
                 @Override
                 public void onError(Exception e) {
@@ -77,8 +76,6 @@ public class MountainAdapter extends RecyclerView.Adapter<MountainAdapter.ViewHo
             cost = itemView.findViewById(R.id.cost);
             wiki = itemView.findViewById(R.id.wiki);
             img = itemView.findViewById(R.id.img);
-
-
         }
     }
 }
